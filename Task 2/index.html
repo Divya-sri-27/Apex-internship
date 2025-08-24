@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Interactive Web App — Vibrant Light &amp; Dark Neon</title>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="bg"></div>
+<header class="topbar">
+<div class="brand">
+<span class="logo">✨</span>
+<h1>Interactive Web App</h1>
+</div>
+<nav class="nav">
+<a href="#contact">Contact</a>
+<a href="#todo">To‑Do</a>
+<a href="#gallery">Gallery</a>
+<button class="btn pill" id="themeToggle">🌙 Dark</button>
+</nav>
+</header>
+<main class="container">
+<!-- Contact Form -->
+<section aria-labelledby="contact-title" class="card animate-in" id="contact">
+<h2 id="contact-title">📩 Contact Form</h2>
+<p class="muted"></p>
+<form id="contactForm" novalidate="">
+<div class="field">
+<label for="name">Name</label>
+<input id="name" minlength="2" placeholder="Your name" required="" type="text"/>
+<small class="hint"></small>
+</div>
+<div class="field">
+<label for="email">Email</label>
+<input id="email" placeholder="you@example.com" required="" type="email"/>
+<small class="hint">Use a valid email address</small>
+</div>
+<div class="field">
+<label for="message">Message</label>
+<textarea id="message" minlength="10" placeholder="How can we help?" required="" rows="4"></textarea>
+<small class="hint">Min 50 characters</small>
+</div>
+<button class="btn gradient" type="submit">Send</button>
+<p aria-live="polite" class="status" id="formMsg" role="status"></p>
+</form>
+</section>
+<!-- To-Do List -->
+<section aria-labelledby="todo-title" class="card animate-in" id="todo">
+<h2 id="todo-title">📝 To‑Do List</h2>
+<p class="muted"></p>
+<div class="row gap">
+<input class="input" id="todoInput" placeholder="Add a task…" type="text"/>
+<button class="btn gradient" id="addTodo">Add</button>
+</div>
+<ul aria-live="polite" class="todo-list" id="todoList"></ul>
+<div class="row actions">
+<button class="btn subtle" id="clearDone">Clear Completed</button>
+<button class="btn subtle" id="clearAll">Clear All</button>
+</div>
+</section>
+<!-- Gallery -->
+<section aria-labelledby="gallery-title" class="card animate-in" id="gallery">
+<h2 id="gallery-title">🖼️ Image Gallery</h2>
+<p class="muted"></p>
+<div class="row gap wrap">
+<input class="input" id="imgUrl" placeholder="https://example.com/image.jpg" type="url"/>
+<button class="btn gradient" id="addImage">Add URL</button>
+<label class="btn subtle file">
+<input accept="image/*" hidden="" id="imageUpload" multiple="" type="file"/>
+          📤 Upload Images
+        </label>
+</div>
+<div class="gallery-grid" id="galleryGrid">
+<p class="placeholder" id="placeholder">✨ No images yet — add one using URL or upload.</p>
+</div>
+</section>
+</main>
+<!-- Lightbox -->
+<div aria-hidden="true" class="lightbox" id="lightbox">
+<button aria-label="Close" class="close" id="closeLightbox">×</button>
+<img alt="Preview" id="lightboxImg"/>
+</div>
+<footer class="footer">
+    Built with ❤️  <span id="year"></span>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
